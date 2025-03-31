@@ -12,7 +12,7 @@ This is **part one of a three-part series** on building a gem to enhance Trix Ed
 🔹 **Part 2: AI-powered features** – Enhancing the editor with smart AI functionalities.  
 🔹 **Part 3: Publishing the Gem** – Finalizing, testing, and releasing it to RubyGems.  
 
-🔗 **Read the full article here:** [Supercharging Trix Editor with AI & Rails Generators](https://github.com/ggerman/trix_genius/tree/feature/generator)  
+🔗 **Read the full article here:** [Supercharging Trix Editor with AI & Rails Generators](https://rubystacknews.com/2025/03/31/supercharging-trix-editor-with-rails-generators-%f0%9f%9a%80/)  
 
 ---
 
