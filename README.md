@@ -22,3 +22,19 @@ To install **Trix Genius**, add it to your `Gemfile`:
 
 ```ruby
 gem 'trix_genius', github: 'ggerman/trix_genius'
+```
+
+---
+
+👨‍💻 **About the Author**  
+Hi! I'm **Germán**, a passionate **Ruby on Rails developer** with experience in **AI-powered applications, StimulusJS, and open-source development**.  
+
+📢 **Let's connect!**  
+🔗 [Website](https://www.rubystacknews.com/)  
+🐙 [GitHub](https://github.com/ggerman)  
+💼 [LinkedIn](https://www.linkedin.com/in/germ%C3%A1n-silva-56a12622/)  
+📧 [Get in Touch](https://rubystacknews.com/get-in-touch/)  
+
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ggerman&hide_progress=true)
+
