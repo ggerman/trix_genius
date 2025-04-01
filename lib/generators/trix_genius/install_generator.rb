@@ -6,7 +6,7 @@ module TrixGenius
       source_root File.expand_path("templates", __dir__)
 
       def create_initializer
-        initializer "trix_genius" <<~RUBY
+        initializer "trix_genius", <<~RUBY
           TrixGenius.configure do |config|
             config.deepseek_api_key=ENV['DEEPSEEK_API_KEY']
           end
