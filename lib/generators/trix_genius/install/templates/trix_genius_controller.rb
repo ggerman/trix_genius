@@ -1,7 +1,8 @@
-class OrthographyController < ApplicationController
+require 'faraday'
+
+class TrixGeniusController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  # POST /correct_orthography
   def correct_spelling
     text = params.require(:text)
 
@@ -18,7 +19,7 @@ class OrthographyController < ApplicationController
   def call_ai_service(text)
     headers = {
       'Content-Type' => 'application/json',
-      'Authorization' => "Bearer #{ENV['DEEPSEEK_API_KEY']}"
+      'Authorization' => "Bearer #{Rails.application.config.deepseek[:api_key}"
     }
 
     body = {
@@ -28,7 +29,7 @@ class OrthographyController < ApplicationController
       max_tokens: 500
     }.to_json
 
-    response = Faraday.post(ENV['API_URL'], body, headers)
+    response = Faraday.post(Rails.application.config.deepseek[:api_url],, body, headers)
 
     if response.success?
       return JSON.parse(response.body)['choices'][0]['message']['content'].split('"')[1]

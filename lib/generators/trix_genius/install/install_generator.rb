@@ -32,8 +32,8 @@ module TrixGenius
         js_application_controller_path = File.join(destination_root, js_application_controller_path)
         application_controller_lines = []
         application_controller_lines << "// Trix Genius block"
-        application_controller_lines << "import TrixController from \"controllers/trix-controller\""
-        application_controller_lines << "application.register(\"trix\", TrixController)\n\n"
+        application_controller_lines << "import TrixGeniusController from \"controllers/trix_genius_controller\""
+        application_controller_lines << "application.register(\"TrixGenius\", TrixGeniusController)\n\n"
 
         if File.exist?(js_application_controller_path)
           application_controller_file = File.read(js_application_controller_path)
