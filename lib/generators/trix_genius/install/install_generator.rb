@@ -28,7 +28,7 @@ module TrixGenius
 
         if File.exist?(js_application_controller_path)
           application_controller_file = File.read(js_application_controller_path)
-          inject_into_file js_application_controller_path, "\n" + 'import TrixController from "controllers/trix-controller"' + "\n", after: 'import { Application } from "@hotwired/stimulus"'
+          inject_into_file js_application_controller_path, "\n" + 'import TrixController from "controllers/trix_genius_controller"' + "\n", after: 'import { Application } from "@hotwired/stimulus"'
           inject_into_file js_application_controller_path, "\n" + 'application.register("trix", TrixController)' + ("\n" * 2), before: 'export { application }'
         else
           puts javascript_application_controller_msg
