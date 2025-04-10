@@ -10,35 +10,28 @@ module TrixGenius
       end
 
       def add_import_to_application_js
-        create_file "verbose.log", "DEST: #{destination_root}"
-
         js_application_path = "app/javascript/application.js"
         js_application_path = File.join(destination_root, js_application_path)
-        application_lines = []
-        application_lines << "// Trix Genius block\n"
-        application_lines << "import \"controllers\""
-        application_lines << "import \"trix\""
-        application_lines << "import \"@rails/actiontext\"\n\n"
 
         if File.exist?(js_application_path)
           application_file = File.read(js_application_path)
-          update_js_file(application_lines, application_file, js_application_path)
+
+          inject_into_file js_application_path, "\n" + 'import "trix"' + "\n", after: 'import "controllers"'
+          inject_into_file js_application_path, "\n" + 'import "@rails/actiontext"' + ("\n" * 2), after: 'import "trix"'
         else
+          puts javascript_application_msg 
           say_status("error", "Could not find #{js_application_path}", :red)
         end
 
-
         js_application_controller_path = "app/javascript/controllers/application.js"
         js_application_controller_path = File.join(destination_root, js_application_controller_path)
-        application_controller_lines = []
-        application_controller_lines << "// Trix Genius block"
-        application_controller_lines << "import TrixGeniusController from \"controllers/trix_genius_controller\""
-        application_controller_lines << "application.register(\"TrixGenius\", TrixGeniusController)\n\n"
 
         if File.exist?(js_application_controller_path)
           application_controller_file = File.read(js_application_controller_path)
-          update_js_file(application_controller_lines, application_controller_file, js_application_controller_path, false)
+          inject_into_file js_application_controller_path, "\n" + 'import TrixController from "controllers/trix-controller"' + "\n", after: 'import { Application } from "@hotwired/stimulus"'
+          inject_into_file js_application_controller_path, "\n" + 'application.register("trix", TrixController)' + ("\n" * 2), before: 'export { application }'
         else
+          puts javascript_application_controller_msg
           say_status("error", "Could not find #{js_application_controller_path}", :red)
         end
       end
@@ -47,23 +40,65 @@ module TrixGenius
         template "trix_genius_controller.js", File.join(destination_root, "app/javascript/controllers/trix_genius_controller.js")
       end
 
+      def add_route_to_routes_file
+        route_code = ["",
+              "  # TrixGenius: Auto-added route",
+              '  post "/trix_genius/correct_spelling", to: "trix_genius#correct_spelling"',
+              ""].join("\n")
+
+        inject_into_file File.join(destination_root, "config/routes.rb"), route_code, after: "Rails.application.routes.draw do\n"
+      end
+
+      def create_controller
+        template "trix_genius_controller.rb", File.join(destination_root, "app/controllers/trix_genius_controller.rb")
+      end
+
       protected
 
-      def update_js_file(lines, content, path, append=true)
-        row = content.lines
-        lines.each do |line|
-          unless content.include?(line)
-            if append
-              append_to_file path, "\n#{line}"
-            else
-              row.insert(-2, "\n#{line}")
-              create_file path, row.join, force: true
-            end
-          else
-            say_status("skipped", "Import already present in application.js", :yellow)
-          end
-        end
-      end 
+      def javascript_application_msg
+          <<~MSG
+
+            ⚠️  You should create the file manually:
+
+            📄 app/javascript/application.js
+
+            💡 With the following content:
+
+            // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+            import "@hotwired/turbo-rails"
+            import "controllers"
+
+            import "trix"
+            import "@rails/actiontext"
+
+          MSG
+      end
+
+      def javascript_application_controller_msg
+        <<~MSG
+
+          ⚠️  You should create the file manually:
+
+          📄 app/javascript/controllers/application.js
+
+          💡 With the following content:
+
+          import { Application } from "@hotwired/stimulus"
+          import TrixController from "controllers/trix-controller"
+
+          const application = Application.start()
+
+          // Configure Stimulus development experience
+          application.debug = false
+          window.Stimulus   = application
+
+          application.register("trix", TrixController)
+
+          export { application }
+        MSG
+
+      end
+
     end
   end
 end
