@@ -1,4 +1,4 @@
-# ✨ TrixGenius (Alpha)
+# ✨ TrixGenius (Alpha 0.1.0)
 
 **TrixGenius** is a Rails engine and generator that extends the [Trix Editor](https://github.com/basecamp/trix) with enhanced functionality using Hotwire (Turbo + Stimulus). It adds AI-powered buttons to the Trix toolbar — including a **Correct Spelling** feature — to make rich-text editing smarter, more dynamic, and user-friendly.
 
@@ -15,7 +15,7 @@
 
 ## Installation
 
-1. Add the gem to your Gemfile:
+1. Add the gem to your Gemfile: https://rubygems.org/gems/trix-genius
 
     ```ruby
     gem "trix_genius"
