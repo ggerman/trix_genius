@@ -74,11 +74,11 @@ To enable the "Correct Spelling" button:
 ````
 Press Button to Correct the text Spelling:
 
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/cs.png)
+![](./src/cs.png)
 
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/Screenshot_20250410_123036.png)
+![](./src/Screenshot_20250410_123036.png)
 
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/Screenshot_20250410_122848.png)
+![](./src/Screenshot_20250410_122848.png)
 
 
 
@@ -95,6 +95,5 @@ Hi! I'm **Germán**, a passionate **Ruby on Rails developer** with experience in
 
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ggerman&hide_progress=true)
-
 
 ```
