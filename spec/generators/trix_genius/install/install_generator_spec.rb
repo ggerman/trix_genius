@@ -69,7 +69,7 @@ RSpec.describe TrixGenius::Generators::InstallGenerator, type: :generator do
   it "Should updates controller application.js with import line" do
     run_generator
     assert_file "app/javascript/controllers/application.js" do |content|
-      expect(content).to include('import TrixController from "controllers/trix-controller"')
+      expect(content).to include('import TrixController from "controllers/trix_genius_controller"')
       expect(content).to include('application.register("trix", TrixController)')
     end
   end
