@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://rubystacknews.com/"   
   s.license     = "GNU"
 
-  s.required_ruby_version = ">= 3.0"
+  s.required_ruby_version = "~> 3.0"
 
   s.add_dependency "rails", ">= 6.0", "< 9.0"
   s.add_dependency "stimulus-rails", "~> 1.3"
