@@ -17,5 +17,6 @@ Gem::Specification.new do |s|
   s.add_dependency "actiontext", "~> 8.0"
   s.add_dependency "faraday", "~> 2.12"
 
+  s.add_development_dependency "rspec"
   s.add_development_dependency "generator_spec"
 end
