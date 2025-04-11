@@ -1,4 +1,4 @@
-# ✨ TrixGenius (Alpha 0.1.0)
+# ✨ TrixGenius (Alpha 0.1.1)
 
 [![Gem Version](https://badge.fury.io/rb/trix-genius.svg)](https://badge.fury.io/rb/trix-genius)
 
