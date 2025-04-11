@@ -10,12 +10,13 @@ Gem::Specification.new do |s|
   s.homepage    = "https://rubystacknews.com/"   
   s.license     = "GNU"
 
-  s.required_ruby_version = ">= 3.0"
+  s.required_ruby_version = "~> 3.0"
 
   s.add_dependency "rails", ">= 6.0", "< 9.0"
   s.add_dependency "stimulus-rails", "~> 1.3"
   s.add_dependency "actiontext", "~> 8.0"
   s.add_dependency "faraday", "~> 2.12"
 
-  s.add_development_dependency "generator_spec"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "generator_spec", "~> 3.0"
 end
