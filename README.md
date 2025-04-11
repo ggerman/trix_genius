@@ -20,7 +20,7 @@
 1. Add the gem to your Gemfile: https://rubygems.org/gems/trix-genius
 
     ```ruby
-    gem "trix_genius"
+    gem 'trix-genius', '~> 0.1.1'
     ```
 
 2. Install the gem:
