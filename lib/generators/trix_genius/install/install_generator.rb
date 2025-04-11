@@ -1,4 +1,5 @@
 require "rails/generators"
+require "trix_genius/flexible_injector"
 
 module TrixGenius
   module Generators
@@ -12,28 +13,21 @@ module TrixGenius
       def add_import_to_application_js
         js_application_path = "app/javascript/application.js"
         js_application_path = File.join(destination_root, js_application_path)
-
-        if File.exist?(js_application_path)
-          application_file = File.read(js_application_path)
-
-          inject_into_file js_application_path, "\n" + 'import "trix"' + "\n", after: 'import "controllers"'
-          inject_into_file js_application_path, "\n" + 'import "@rails/actiontext"' + ("\n" * 2), after: 'import "trix"'
-        else
+        unless File.exist?(js_application_path)
           puts javascript_application_msg 
           say_status("error", "Could not find #{js_application_path}", :red)
         end
 
         js_application_controller_path = "app/javascript/controllers/application.js"
         js_application_controller_path = File.join(destination_root, js_application_controller_path)
-
-        if File.exist?(js_application_controller_path)
-          application_controller_file = File.read(js_application_controller_path)
-          inject_into_file js_application_controller_path, "\n" + 'import TrixController from "controllers/trix_genius_controller"' + "\n", after: 'import { Application } from "@hotwired/stimulus"'
-          inject_into_file js_application_controller_path, "\n" + 'application.register("trix", TrixController)' + ("\n" * 2), before: 'export { application }'
-        else
+        unless File.exist?(js_application_controller_path)
           puts javascript_application_controller_msg
           say_status("error", "Could not find #{js_application_controller_path}", :red)
         end
+
+        gem_root = File.expand_path("../..", __dir__)
+        config_path = File.join("config", "setting_updates.yml")
+        FlexibleInjector.start([config_path, destination_root])
       end
 
       def create_stimulus_controller

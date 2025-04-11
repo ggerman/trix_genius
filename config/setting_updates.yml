@@ -1,0 +1,20 @@
+- file: app/javascript/application.js
+  content: 'import "trix"'
+  message: insert
+  after: 'import "controllers"'
+
+- file: app/javascript/application.js
+  content: 'import "@rails/actiontext"'
+  message: insert
+  after: 'import "trix"'
+
+- file: app/javascript/controllers/application.js
+  content: 'import TrixController from "controllers/trix_genius_controller"'
+  message: insert
+  after: 'import { Application } from "@hotwired/stimulus"'
+
+- file: app/javascript/controllers/application.js
+  content: 'application.register("trix", TrixController)'
+  message: insert
+  before: 'export { application }'
+
