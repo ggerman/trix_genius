@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "yaml"
+
 group :development, :test do
   gem "rspec", "~> 3.0"
   gem "rails", "~> 8.0.0" # or whatever version you’re targeting

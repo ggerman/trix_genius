@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|   
   s.name        = "trix-genius"   
-  s.version     = "0.1.0"
+  s.version     = "0.1.1"
   s.summary     = "Integrates AI-powered buttons with Trix using Stimulus"
   s.description = "Trix-Genius adds AI-powered buttons and other custom controls to Trix editor using Stimulus."
   s.authors     = ["Giménez Silva Germán Alberto https://rubystacknews.com/"] 
@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency "stimulus-rails", "~> 1.3"
   s.add_dependency "actiontext", "~> 8.0"
   s.add_dependency "faraday", "~> 2.12"
+  s.add_dependency "yaml"
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "generator_spec", "~> 3.0"
