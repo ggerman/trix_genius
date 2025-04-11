@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby: [ '2.7', '3.0', '3.1', '3.2' ] # Add/remove versions as needed
+        ruby: [ '3.1', '3.2' ] # Add/remove versions as needed
 
     steps:
       - uses: actions/checkout@v4
