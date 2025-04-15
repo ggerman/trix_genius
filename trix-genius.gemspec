@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email       = "ggerman@gmail.com"
   s.files       = Dir["lib/**/*", "generators/**/*","templates/**/*", "spec/**/*"]
   s.require_paths = ["lib"]
-  s.homepage    = "https://rubystacknews.com/"   
+  s.homepage      = "https://rubystacknews.com/2025/04/15/%f0%9f%9a%80-introducing-trixgenius-alpha-0-1-2-now-with-ai-powered-math-evaluation/"
   s.license     = "GNU"
 
   s.required_ruby_version = "~> 3.0"
@@ -20,4 +20,18 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "generator_spec", "~> 3.0"
+
+  s.metadata = {
+    "source_code_uri" => "https://github.com/ggerman/trix_genius",
+    "changelog_uri"   => "https://github.com/ggerman/trix_genius/blob/main/CHANGELOG.md",
+    "documentation_uri" => "https://github.com/ggerman/trix_genius/blob/develop/README.md",
+    "bug_tracker_uri" => "https://github.com/ggerman/trix_genius/blob/main/CHANGELOG.md",
+    "homepage_uri"    => "https://rubystacknews.com/",
+    "wiki_uri"        => "https://github.com/ggerman/trix_genius/wiki",
+  }
 end
+
+
+
+
+
