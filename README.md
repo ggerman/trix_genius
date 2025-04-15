@@ -86,17 +86,17 @@ Press Button to Correct the text Spelling:
 
 Trix Genius now supports evaluating **math expressions inside parentheses** within the Trix WYSIWYG editor — with a single click!
 
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/calculate_expression.png)
+![](./src/calculate_expression.png)
 
 When a user types a math expression like `(5 + 3 * 2)`, they can press the **"Calculate"** button (provided by the gem) to automatically evaluate and replace the expression with its result.
 
 ### ➕ Example
 
 Input (before pressing "Calculate"):
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/before_calculate.png)
+![](./src/before_calculate.png)
 
 ### ➕ Example
-![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/after_calculate.png)
+![](./src/after_calculate.png)
 
 # Pending
 
