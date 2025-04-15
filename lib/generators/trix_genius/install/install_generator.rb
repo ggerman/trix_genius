@@ -38,6 +38,7 @@ module TrixGenius
         route_code = ["",
               "  # TrixGenius: Auto-added route",
               '  post "/trix_genius/correct_spelling", to: "trix_genius#correct_spelling"',
+              '  post "trix_genius/calculate_expression", to: "trix_genius#calculate_expression"',
               ""].join("\n")
 
         inject_into_file File.join(destination_root, "config/routes.rb"), route_code, after: "Rails.application.routes.draw do\n"
