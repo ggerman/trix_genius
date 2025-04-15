@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|   
   s.name        = "trix-genius"   
-  s.version     = "0.1.2"
+  s.version     = "0.1.3"
   s.summary     = "Integrates AI-powered buttons with Trix using Stimulus"
   s.description = "Trix-Genius adds AI-powered buttons and other custom controls to Trix editor using Stimulus. https://rubystacknews.com/"
   s.authors     = ["Giménez Silva Germán Alberto https://rubystacknews.com/"] 
