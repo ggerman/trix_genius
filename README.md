@@ -1,4 +1,4 @@
-# ✨ TrixGenius (Alpha 0.1.1)
+# ✨ TrixGenius (Alpha 0.1.2)
 
 [![Gem Version](https://badge.fury.io/rb/trix-genius.svg)](https://badge.fury.io/rb/trix-genius)
 
@@ -76,13 +76,34 @@ To enable the "Correct Spelling" button:
 ````
 Press Button to Correct the text Spelling:
 
-![](./src/cs.png)
+![](./src/check_spell.png)
 
 ![](./src/Screenshot_20250410_123036.png)
 
-![](./src/Screenshot_20250410_122848.png)
+![](./src/before_calculate.png)
 
+## ✨ New Feature: Math Expression Evaluation
 
+Trix Genius now supports evaluating **math expressions inside parentheses** within the Trix WYSIWYG editor — with a single click!
+
+![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/calculate_expression.png)
+
+When a user types a math expression like `(5 + 3 * 2)`, they can press the **"Calculate"** button (provided by the gem) to automatically evaluate and replace the expression with its result.
+
+### ➕ Example
+
+Input (before pressing "Calculate"):
+![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/before_calculate.png)
+
+### ➕ Example
+![](/home/ggerman/ruby/create_gem/generator/trix_genius/src/after_calculate.png)
+
+# Pending
+
+- [ ] Add ChatGPT
+- [ ] Add qwen.ai
+- [ ] Allow enabled or disabled each feature
+- [ ] Upload specs for Calculate Expression
 
 ---
 
